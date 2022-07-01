@@ -1,3 +1,6 @@
+/*Ejercicio 1. Escribir una función que sume dos números. Implemente un programa
+que la utilice. */
+
 #include <stdio.h>
 
 int suma (num,num1) {
