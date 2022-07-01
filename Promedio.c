@@ -1,20 +1,30 @@
+/*Escribir un programa que reciba como argumento un conjunto de
+números. Calcular la media mediante una función. */
+
 #include <stdio.h>
 
-int prom (num1,num2,num3,num4) {
-	return ((num1+num2+num3+num4)/4);
+int promedio();
+
+int main() {
+	int num, i, prom;
+	printf("Introduzca la cantidad de numeros a promediar: ");
+	scanf("%d", &num);
+	int array[num];
+	
+	for (i=0; i<num; i++) {
+		printf("Introduzca el valor del numero %d: ", i+1);
+		scanf("%d", &array[i]);
+	}
+	
+	prom=promedio(array, num);
+	printf("El promedio de los numeros es: %i", prom);
+	
+	return 0;
 }
 
-int main () {
-	
-	int num1, num2, num3, num4, result;
-
-	
-	printf("Introduzca los numeros para calcular su promedio:");
-	scanf("%i", &num1);
-		scanf("%i", &num2);
-			scanf("%i", &num3);
-				scanf("%i", &num4);
-	
-	result = prom(num1,num2,num3,num4);
-	printf("El promedio de los numeros es: %i", result);
+int promedio(int nums[], int n) {
+	int i, suma=0;
+	for (i=0; i<n; i++)
+	suma+=nums[i];
+	return suma/n;
 }
